@@ -1,5 +1,5 @@
 /*
- * First and Last Names
+ * Marcus Rose
  */
 
 import java.awt.Rectangle;
@@ -11,8 +11,13 @@ public class Homework2 {
 	 * Save the string as a private instance variable
 	 */
 
+	 private String str;
 
-	/* Write the method upperase
+	 public Homework2(String str) { /*capitalized because String is a java class*/
+		 this.str = str;
+	 }
+
+	/* Write the method uppercase
 	 * It does not take in any parameters
 	 * It returns a String
 	 * Use String methods to turn the instance variable String into all
@@ -20,6 +25,9 @@ public class Homework2 {
 	 * Hint: Search the String class for 'uppercase'
 	 */
 
+	 public String uppercase() {
+		 return str.toUpperCase();
+	 }
 
 	/* Write the method strip
 	 * It takes in one paramter: a String
@@ -29,16 +37,27 @@ public class Homework2 {
 	 * Hint: Search the String class for 'replace'
 	 */
 
+public String strip(String str) {
+
+	str = str.replace(" ", "");
+	str = str.replace(",", "");
+	str = str.replace(".", "");
+	str = str.replaceAll("!", "");
+
+	return str;
+}
+
+
 
 	/* Fix the errors in the method problem4
 	 */
 	public Rectangle problems() {
-		Rectangle r1 = (5, 10, 15, 20);
-		double width = Rectangle(5, 10, 15, 20).getWidth();
-		Rectangle r2;
+		Rectangle r1 = new Rectangle(5, 10, 15, 20);
+		double width = r1.getWidth();
+		Rectangle r2 = new Rectangle();
 		r2.translate(15, 25);
-		r3 = new Rectangle();
-		r3.translate("Far, far away");
+		Rectangle r3 = new Rectangle();
+		r3.translate(1000000, 100000);
 		return r3;
 	}
 
@@ -47,6 +66,7 @@ public class Homework2 {
 	 * parameter Rectangle
 	 */
 	public double getPerimeter(Rectangle rect) {
+		return (rect.getWidth() * 2 + rect.getHeight() * 2);
 
 	}
 
